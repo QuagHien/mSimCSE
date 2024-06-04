@@ -12,6 +12,7 @@ conda activate mSimCSE
 Before install requirements.txt, install [pytorch](https://pytorch.org/get-started/locally/) from the official website. We test our model on pytorch LTS(1.8.2). It should also work on a later version.
 ```bash
 git clone https://github.com/QuagHien/mSimCSE.git
+cd mSimCSE
 pip install -r requirements.txt
 ```
 
@@ -21,15 +22,13 @@ For English NLI training, we directly use the NLI data preprocessed by the [SimC
 ```bash
 cd data
 data.sh
+cd ..
 ```
 
 ## Training and Testing
 ### Training:
 Our model requires 40GB memory for training. Notice that our code doesn't support multi-gpu training, so please specify a GPU to use by "CUDA_VISIBLE_DEVICES=GPUID" prefix.  
-For English NLI training:
-```bash
-./train_english.sh
-```
+
 For cross-lingual NLI:
 ```bash
 ./train_cross.sh
