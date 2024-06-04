@@ -31,7 +31,7 @@ Our model requires 40GB memory for training. Notice that our code doesn't suppor
 
 For cross-lingual NLI:
 ```bash
-./train_cross.sh
+train_cross.sh
 ```
 Notice that in cross-lingual NLI training, using a larger batch size and larger epoch number decreases the performance because our implementation sometimes puts cross-lingual sentences with the same meaning into the same batch. Using a smaller batch size reduces the chance of putting identical cross-lingual sentences into the same batch and thus improving the performance.
 
