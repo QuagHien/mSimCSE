@@ -15,7 +15,7 @@ python train.py \
     --evaluation_strategy steps \
     --metric_for_best_model stsb_spearman \
     --load_best_model_at_end \
-    --eval_steps 300 \
+    --eval_steps 200 \
     --pooler_type cls \
     --mlp_only_train \
     --overwrite_output_dir \
