@@ -8,4 +8,4 @@ gradio
 setuptools==49.3.0
 sentencepiece
 faiss-gpu
-packaging==23.1
+#packaging==23.1
