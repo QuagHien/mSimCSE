@@ -21,7 +21,7 @@ For English NLI training, we directly use the NLI data preprocessed by the [SimC
 
 ```bash
 cd data
-data.sh
+download_nli.sh
 cd ..
 ```
 
