@@ -19,13 +19,7 @@ For English NLI training, we directly use the NLI data preprocessed by the [SimC
 
 ```bash
 cd data
-./download_nli.sh
-./download_xnli.sh
-./download_bucc.sh
-cd ../SentEval/data/downstream/
-./download_dataset.sh
-cd ../../..
-python3 merge_multi_lingual.py
+data.sh
 ```
 
 ## Training and Testing
