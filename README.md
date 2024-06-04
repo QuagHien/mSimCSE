@@ -11,6 +11,7 @@ conda activate mSimCSE
 ### Step 2: Install Packages
 Before install requirements.txt, install [pytorch](https://pytorch.org/get-started/locally/) from the official website. We test our model on pytorch LTS(1.8.2). It should also work on a later version.
 ```bash
+git clone https://github.com/QuagHien/mSimCSE.git
 pip install -r requirements.txt
 ```
 
