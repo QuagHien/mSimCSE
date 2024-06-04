@@ -4,7 +4,7 @@ This is the official implementation of the paper [English Contrastive Learning C
 ## Getting Started:
 ### Step 1: Build virtual environment.
 ```bash
-conda create -n mSimCSE python=3.10
+conda create -n mSimCSE python=3.9
 conda activate mSimCSE
 ```
 
