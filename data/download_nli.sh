@@ -1,1 +1,1 @@
-wget https://huggingface.co/datasets/princeton-nlp/datasets-for-simcse/resolve/main/nli_for_simcse.csv
+wget https://huggingface.co/datasets/wanhin/msimcse_519k/resolve/main/msimcse_519k.csv
