@@ -7,7 +7,7 @@
 python train.py \
     --model_name_or_path xlm-roberta-base  \
     --train_file data/msimcse_512_seqlen.csv  \
-    --output_dir result/xlm-roberta-large-cross_all \
+    --output_dir result/xlm-roberta-base-cross_vi-en \
     --num_train_epochs 10 \
     --per_device_train_batch_size 16 \
     --learning_rate 1e-5 \
