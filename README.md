@@ -23,6 +23,10 @@ For English NLI training, we directly use the NLI data preprocessed by the [SimC
 cd data
 download_nli.sh
 cd ..
+
+rmdir /s /q SentEval
+git clone https://github.com/facebookresearch/SentEval.git
+
 cd SentEval/data/downstream
 get_transfer_data.bash
 cd ../../..
