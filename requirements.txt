@@ -7,5 +7,5 @@ prettytable==2.1.0
 gradio
 setuptools==49.3.0
 sentencepiece
-#packaging==23.1
+wandb
 faiss-gpu
