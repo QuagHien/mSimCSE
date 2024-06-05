@@ -5,11 +5,11 @@
 # about how to use PyTorch's distributed data parallel.
 
 python train.py \
-    --model_name_or_path xlm-roberta-large  \
+    --model_name_or_path xlm-roberta-base  \
     --train_file data/msimcse_512_seqlen.csv  \
     --output_dir result/xlm-roberta-large-cross_all \
-    --num_train_epochs 4 \
-    --per_device_train_batch_size 8 \
+    --num_train_epochs 10 \
+    --per_device_train_batch_size 16 \
     --learning_rate 1e-5 \
     --max_seq_length 512 \
     --evaluation_strategy steps \
@@ -21,6 +21,5 @@ python train.py \
     --overwrite_output_dir \
     --temp 0.05 \
     --do_train \
-    --do_eval \
     --fp16 \
     #"$@"
