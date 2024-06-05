@@ -8,7 +8,7 @@ python train.py \
     --model_name_or_path xlm-roberta-large  \
     --train_file data/msimcse_519k.csv  \
     --output_dir result/xlm-roberta-large-cross_all \
-    --num_train_epochs 8 \
+    --num_train_epochs 4 \
     --per_device_train_batch_size 8 \
     --learning_rate 1e-5 \
     --max_seq_length 512 \
