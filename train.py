@@ -197,7 +197,10 @@ class OurTrainingArguments(TrainingArguments):
         default=False,
         metadata={"help": "Evaluate transfer task dev sets (in validation)."}
     )
-
+    report_to: Optional[str] = field(
+        default="wandb",
+        metadata={"help": "The list of integrations to report the results and logs to. Supported platforms are `wandb`, `comet_ml`, `clearml`, and `tensorboard`."}
+    )
     @cached_property
     @torch_required
     def _setup_devices(self) -> "torch.device":
