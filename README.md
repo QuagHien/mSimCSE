@@ -4,7 +4,7 @@ This is the official implementation of the paper [English Contrastive Learning C
 ## Getting Started:
 ### Step 1: Build virtual environment.
 ```bash
-conda create -n mSimCSE python=3.9
+conda create -n mSimCSE python=3.7
 conda activate mSimCSE
 ```
 
@@ -28,7 +28,10 @@ cd ..
 ## Training and Testing
 ### Training:
 Our model requires 40GB memory for training. Notice that our code doesn't support multi-gpu training, so please specify a GPU to use by "CUDA_VISIBLE_DEVICES=GPUID" prefix.  
-
+For English NLI training:
+```bash
+./train_english.sh
+```
 For cross-lingual NLI:
 ```bash
 train_cross.sh
