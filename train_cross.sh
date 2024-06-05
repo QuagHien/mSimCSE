@@ -9,13 +9,13 @@ python train.py \
     --train_file data/msimcse_519k.csv  \
     --output_dir result/xlm-roberta-large-cross_all \
     --num_train_epochs 8 \
-    --per_device_train_batch_size 4 \
+    --per_device_train_batch_size 8 \
     --learning_rate 1e-5 \
     --max_seq_length 512 \
     --evaluation_strategy steps \
     --metric_for_best_model stsb_spearman \
     --load_best_model_at_end \
-    --eval_steps 200 \
+    --eval_steps 300 \
     --pooler_type cls \
     --mlp_only_train \
     --overwrite_output_dir \
