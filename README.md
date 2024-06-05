@@ -33,7 +33,7 @@ cd ../../..
 Our model requires 40GB memory for training. Notice that our code doesn't support multi-gpu training, so please specify a GPU to use by "CUDA_VISIBLE_DEVICES=GPUID" prefix.  
 For English NLI training:
 ```bash
-./train_english.sh
+train_english.sh
 ```
 For cross-lingual NLI:
 ```bash
