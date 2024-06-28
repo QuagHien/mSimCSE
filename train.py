@@ -395,6 +395,8 @@ def main():
                 use_auth_token=True if model_args.use_auth_token else None,
                 model_args=model_args
             )
+            # Remove shared embedding
+            model.remove_shared_embedding()
         else:
             raise NotImplementedError
     else:
