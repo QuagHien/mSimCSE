@@ -294,7 +294,7 @@ def main():
 
     # WandB setup
     wandb.login(key='7ac28caf9e3dc3e0685c97df182d52e13a81e311')
-    wandb.init(project="mSimCSE-xlm-R-base")  # Replace "my-project-name" with your actual project name
+    wandb.init(project="mt5-contrastive-learning")  # Replace "my-project-name" with your actual project name
 
     # Set seed before initializing model.
     set_seed(training_args.seed)
@@ -334,11 +334,8 @@ def main():
     }
     if model_args.config_name:
         config = AutoConfig.from_pretrained(model_args.config_name, **config_kwargs)
-    elif model_args.model_name_or_path:
-        if 'mt5' in model_args.model_name_or_path:  # Add this block
-            config = MT5Config.from_pretrained(model_args.model_name_or_path, **config_kwargs)
-        else:
-            config = AutoConfig.from_pretrained(model_args.model_name_or_path, **config_kwargs)
+    elif model_args.model_name_or_path:        
+        config = AutoConfig.from_pretrained(model_args.model_name_or_path, **config_kwargs)
     else:
         config = CONFIG_MAPPING[model_args.model_type]()
         logger.warning("You are instantiating a new config instance from scratch.")
@@ -389,15 +386,15 @@ def main():
                 pretrained_model = BertForPreTraining.from_pretrained(model_args.model_name_or_path)
                 model.lm_head.load_state_dict(pretrained_model.cls.predictions.state_dict())
         elif 'mt5' in model_args.model_name_or_path:  # Add this block
-        model = MT5ForCL.from_pretrained(
-            model_args.model_name_or_path,
-            from_tf=bool(".ckpt" in model_args.model_name_or_path),
-            config=config,
-            cache_dir=model_args.cache_dir,
-            revision=model_args.model_revision,
-            use_auth_token=True if model_args.use_auth_token else None,
-            model_args=model_args
-        )
+            model = MT5ForCL.from_pretrained(
+                model_args.model_name_or_path,
+                from_tf=bool(".ckpt" in model_args.model_name_or_path),
+                config=config,
+                cache_dir=model_args.cache_dir,
+                revision=model_args.model_revision,
+                use_auth_token=True if model_args.use_auth_token else None,
+                model_args=model_args
+            )
         else:
             raise NotImplementedError
     else:
@@ -574,10 +571,12 @@ def main():
             if (model_args.model_name_or_path is not None and os.path.isdir(model_args.model_name_or_path))
             else None
         )
-        train_result = trainer.train(model_path=model_path)
+        
+        try:
+            train_result = trainer.train(model_path=model_path)
                 
-        trainer.save_model()  # Saves the tokenizer too for easy upload
-
+            trainer.save_model()  # Saves the tokenizer too for easy upload
+        finally:
         # End WandB run
         wandb.finish()
         
