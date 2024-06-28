@@ -579,8 +579,8 @@ def main():
                 
             trainer.save_model()  # Saves the tokenizer too for easy upload
         finally:
-        # End WandB run
-        wandb.finish()
+            # End WandB run
+            wandb.finish()
         
         output_train_file = os.path.join(training_args.output_dir, "train_results.txt")
         if trainer.is_world_process_zero():
