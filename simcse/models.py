@@ -285,6 +285,10 @@ class MT5ForCL(MT5PreTrainedModel):
 
         cl_init(self, config)
 
+    def remove_shared_embedding(self):
+        if hasattr(self.mt5, 'shared'):
+            del self.mt5.shared  # Xóa thuộc tính 'shared' của MT5 encoder
+    
     def forward(self,
         input_ids=None,
         attention_mask=None,
