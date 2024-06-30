@@ -8,4 +8,4 @@ gradio
 setuptools==49.3.0
 sentencepiece
 wandb
-faiss-gpu
+#faiss-gpu
