@@ -5,7 +5,7 @@ import torch.distributed as dist
 
 import transformers
 from transformers import RobertaTokenizer
-from transformers.models.mt5.modeling_mt5 import MT5PreTrainedModel, MT5EncoderModel
+from transformers import T5EncoderModel, MT5EncoderModel
 from transformers.models.roberta.modeling_roberta import RobertaPreTrainedModel, RobertaModel, RobertaLMHead
 from transformers.models.bert.modeling_bert import BertPreTrainedModel, BertModel, BertLMPredictionHead
 from transformers.activations import gelu
