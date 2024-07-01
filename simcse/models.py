@@ -272,7 +272,7 @@ def sentemb_forward(
         hidden_states=outputs.hidden_states,
     )
 
-class MT5ForCL(MT5PreTrainedModel):
+class MT5ForCL(T5EncoderModel):
     _keys_to_ignore_on_load_missing = [r"position_ids"]
 
     def __init__(self, config, *model_args, **model_kargs):
