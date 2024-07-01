@@ -22,4 +22,5 @@ python train.py \
     --overwrite_output_dir \
     --temp 0.05 \
     --do_train \
-    --do_eval 
+    --do_eval \
+    #"$@"
