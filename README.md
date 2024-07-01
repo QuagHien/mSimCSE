@@ -25,7 +25,7 @@ download_nli.sh
 
 git clone https://github.com/facebookresearch/SentEval.git
 cd ..
-move data\SentEval\data SentEval\
+mv data/SentEval/data SentEval/
 
 cd SentEval/data/downstream
 get_transfer_data.bash
