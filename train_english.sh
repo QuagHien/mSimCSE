@@ -3,11 +3,11 @@
 # In this example, we show how to train SimCSE on unsupervised Wikipedia data.
 # If you want to train it with multiple GPU cards, see "run_sup_example.sh"
 # about how to use PyTorch's distributed data parallel.
-
+export CUDA_VISIBLE_DEVICES=0
 python train.py \
-    --model_name_or_path xlm-roberta-large  \
+    --model_name_or_path xlm-roberta-base  \
     --train_file data/nli_for_simcse.csv  \
-    --output_dir result/xlm-roberta-large-mono_en \
+    --output_dir result/xlm-roberta-base-vi_en \
     --num_train_epochs 2 \
     --per_device_train_batch_size 128 \
     --learning_rate 1e-5 \
