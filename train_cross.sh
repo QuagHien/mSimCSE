@@ -12,7 +12,7 @@ python train.py \
     --per_device_train_batch_size 2 \
     --gradient_accumulation_steps 2 \
     --learning_rate 1e-5 \
-    --max_seq_length 512 \
+    --max_seq_length 32 \
     --evaluation_strategy steps \
     --metric_for_best_model stsb_spearman \
     --load_best_model_at_end \
