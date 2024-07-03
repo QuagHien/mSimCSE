@@ -273,10 +273,12 @@ def sentemb_forward(
     )
 
 class MT5ForCL(T5EncoderModel):
-    _keys_to_ignore_on_load_missing = [r"position_ids"]
+    authorized_missing_keys = [
+        r"encoder\.embed_tokens\.weight",
+    ]
 
     def __init__(self, config, *model_args, **model_kargs):
-        super().__init__()
+        super().__init__(config)
         self.model_args = model_kargs["model_args"]
         self.mt5 = MT5EncoderModel(config)
 
